@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no">
+	<title>图片合成</title>
+	<style>
+		#preview {
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			height: 300px;
+		}
+		#canvas {
+			z-index: 1;
+		}
+		#canvas-bg {
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#parameter {
+			margin-top: 350px;
+		}
+		.input-box {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="preview">
+		<canvas id="canvas"></canvas>
+		<canvas id="canvas-bg"></canvas>
+	</div>
+	<div id="parameter">
+		<div class="input-box">
+			上传白底展示图片：
+			<input type="file" id="filechooser" />	
+		</div>
+		<div class="input-box">
+			上传黑底展示图片：
+			<input type="file" id="filechooser_2" />	
+		</div>
+		<div class="input-box">
+			<button id="combineBtn">合成图片</button>
+			（需要先完成上面两个上传）
+		</div>
+		<div class="input-box">
+			背景颜色测试:
+			<input type="radio" name="bgColor" value="white" id="white">	
+			<label for="white">白色</label>
+			<input type="radio" name="bgColor" value="black" id="black">	
+			<label for="black">黑色</label>
+			<input type="radio" name="bgColor" value="transparent" id="transparent">	
+			<label for="transparent">透明</label>
+		</div>
+		<div class="input-box">
+			<button id="saveBtn">下载图片</button>
+		</div>
+		<div class="input-box">
+			<button id="createBtn">生成图片</button>
+		</div>
+		<div class="input-box">
+			<p><strong>使用说明：</strong>
+			<p>该图片合成器可以在QQ中实现缩略图与大图呈现不同图片</p>
+			<p>(有可能部分机型QQ中无法呈现效果)</p>
+			<p><strong>图片保存说明：</strong></p>
+			<p>PC端可以直接右键保存或者点击下载图片</p>
+			<p>移动端可以尝试点击下载图片或者生成图片后长按保存</p>
+			<p>(因为没有后台，如果移动端不行，想保存请开电脑吧~)</p>
+		</div>
+		
+		<div id="imgBox">		
+		</div>
+	</div>
+	<script src="js/main.js?0.1.0"></script>
+</body>
+</html>
